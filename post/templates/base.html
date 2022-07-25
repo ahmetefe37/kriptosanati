@@ -24,11 +24,21 @@
             <div id="status">&nbsp;</div>
         </div>
         
-        <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+        <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a> 
 
-        {% block container %}
+        <div class="container">
+            <!-- header field  -->
+            {% include "top_navbar.html" %}
+            {% include "navbar.html" %}
             
-        {% endblock %}
+            <!--  -->
+            {% block content %}
+                
+            {% endblock %}
+
+        </div>
+
+        {% include "footer.html" %}
         
         <script src="{% static 'js/jquery.min.js' %}"></script> 
         <script src="{% static 'js/bootstrap.min.js' %}"></script> 
