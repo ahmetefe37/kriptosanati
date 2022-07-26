@@ -1,0 +1,35 @@
+{% load static %}
+
+<section id="mainContent">
+
+    <div class="content_top">
+      <div class="row">
+        
+        {% include "postFolder/homeFolder/topContentFolder/topslider.html" %}
+
+        {% include "postFolder/homeFolder/topContentFolder/contentbox.html" %}
+
+      </div>
+    </div>
+
+
+    <div class="content_middle">
+
+      {% include "postFolder/homeFolder/middleContentFolder/leftside.html" %}
+
+      {% include "postFolder/homeFolder/middleContentFolder/middleside.html" %}
+
+      {% include "postFolder/homeFolder/middleContentFolder/rightside.html" %}
+      
+    </div>
+
+
+    <div class="content_bottom">
+
+      {% include "postFolder/homeFolder/bottomContentFolder/leftside.html" %}
+      
+      {% include "postFolder/homeFolder/bottomContentFolder/rightside.html" %}
+      
+    </div>
+
+  </section>

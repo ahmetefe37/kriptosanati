@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # my apps
-    'post'
+    'post',
+    'dashboard',
+    
 
     # third party apps
 ]
@@ -63,7 +65,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            join(BASE_DIR,"templates"),
+            join(BASE_DIR,"templates/"),
 
         ],
         'APP_DIRS': True,
