@@ -4,11 +4,11 @@
     <div class="content_top_right">
       <ul class="featured_nav wow fadeInDown">
 
-
+        {% for post in quintet_posts %}
         <li><img src="{% static 'images/300x215x1.jpg' %}" alt="">
           <div class="title_caption"><a href="#">Kutu İçerik Ögesi</a></div>
         </li>
-
+        {% endfor %}
       </ul>
     </div>
   </div>

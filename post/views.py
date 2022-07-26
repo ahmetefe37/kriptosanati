@@ -1,8 +1,17 @@
+# system modules
 from multiprocessing import context
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse, get_object_or_404,redirect
+
+# my models
+from post.models import Post
 
 def f_homepage(request):
-    context = {}
+    posts = Post.objects.all()
+    quintet_posts = Post.objects.all()
+    context = {
+        "posts":posts,
+        "quintet_posts":quintet_posts,
+    }
     return render(request,"postFolder/homeFolder/homepage.html",context)
 
 def f_detailpage(request,pk_slug_detail):
