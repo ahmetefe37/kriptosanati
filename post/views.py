@@ -1,16 +1,46 @@
 # system modules
 from multiprocessing import context
+from unicodedata import category
 from django.shortcuts import render,HttpResponse, get_object_or_404,redirect
 
 # my models
-from post.models import Post
+from post.models import Post,Category
 
 def f_homepage(request):
-    posts = Post.objects.all()
-    quintet_posts = Post.objects.all()
+
+    posts = Post.objects.all().order_by("id")
+
+    categories = Category.objects.all()
+
+    # adet sayılarına göre değişkenler
+    carousel_side_posts = Post.objects.order_by("-id")[:4]
+    box_field_posts = Post.objects.order_by("id")[:4]
+
+    # kategorilere göre gruplandırma
+    category_posts_0 = Post.objects.filter(category = categories[0])
+    category_posts_1 = Post.objects.filter(category = categories[1])
+    category_posts_2 = Post.objects.filter(category = categories[2])
+    category_posts_3 = Post.objects.filter(category = categories[3])
+    category_posts_4 = Post.objects.filter(category = categories[4])
+    category_posts_5 = Post.objects.filter(category = categories[5])
+
     context = {
         "posts":posts,
-        "quintet_posts":quintet_posts,
+        "box_field_posts":box_field_posts,
+        "carousel_side_posts":carousel_side_posts,
+        "categories0": categories[0],
+        "categories1": categories[1],
+        "categories2": categories[2],
+        "categories3": categories[3],
+        "categories4": categories[4],
+        "categories5": categories[5],
+
+        "category_post_0": category_posts_0,
+        "category_post_1": category_posts_1,
+        "category_post_2": category_posts_2,
+        "category_post_3": category_posts_3,
+        "category_post_4": category_posts_4,
+        "category_post_5": category_posts_5,
     }
     return render(request,"postFolder/homeFolder/homepage.html",context)
 
