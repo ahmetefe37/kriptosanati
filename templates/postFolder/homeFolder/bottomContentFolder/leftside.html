@@ -5,163 +5,47 @@
 
         {% comment %} top category field {% endcomment %}
         <div class="single_category wow fadeInDown">
-            <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <a class="title_text" href="#">{{ categories2.name }}</a> </h2>
+            <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> 
+                <a class="title_text" href="#">Son Gönderiler</a> </h2>
 
-            {% comment %} top category field - left side {% endcomment %}
-            <div class="business_category_left wow fadeInDown">
-                <ul class="fashion_catgnav">
-
-                    {% for post in category_posts_2 %}
-                    <li>
-                        <div class="catgimg2_container"> <a href="#"><img alt="" src="{{ post.image_post.url }}"></a> </div>
-                        <h2 class="catg_titile"><a href="#">{{ post.title }}</a></h2>
-                        <div class="comments_box"> 
-                            <span class="meta_date">{{ post.date_created }}</span> 
-                            <span class="meta_comment"><a href="#">Yorum Yok</a></span> 
-                            <span class="meta_more"><a  href="#">Devamı >></a></span> 
-                        </div>
-                        <p>{{ post.content|truncatewords:5 }}</p>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
+           
 
             {% comment %} top category field - right side {% endcomment %}
-            <div class="business_category_right wow fadeInDown">
+            <div class=" wow fadeInDown">
 
                 <ul class="small_catg">
-                    {% for post in category_posts_2 %}
+                    {% for post in box_field_posts %}
                     <li>
-                        <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="{{ post.image_post.url }}" alt=""></a>
+                        {% comment %} <div class="media wow fadeInDown"> 
+                            <a class="media-left" href="#"><img src="{{ post.image_post.url }}" alt=""></a>
                         <div class="media-body">
                             <h4 class="media-heading"><a href="#">{{ post.title }}</a></h4>
                             <div class="comments_box"> <span class="meta_date">{{ post.date_created }}</span> 
                                 <span class="meta_comment"><a href="#">Yorum Yok</a></span> </div>
                         </div>
+                        </div> {% endcomment %}
+                        <div class="card text-center" style="background-color:#f0eee4;">
+                            <div class="card-header">
+                                {{post.category}}
+                                <img class="card-img-top " style = "width:100%; height:auto;" src="{{ post.image_post.url }}" alt="Card image cap">
+                            </div>
+                            
+                            <div class="card-body">
+                                <h5 class="card-title">{{ post.title }}</h5>
+                           
+                                <p class="card-text">{{ post.content | truncatewords:5 }}</p>
+         
+                                
+                            </div>
+                            <div class="card-footer text-muted contianer">
+                                <span class="float-left"> {{ post.date_created }} </span>
+                                <a href="#" class="btn btn-primary float-right">Devamı >></a>
+                            </div>
                         </div>
+                    </br>
                     </li>
                     {% endfor %}
                 </ul>
-            </div>
-
-        </div>
-
-        {% comment %} middle category field {% endcomment %}
-        <div class="games_fashion_area">
-            <div class="games_category">
-                <div class="single_category">
-
-                    <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <a class="title_text" href="#">{{ categories3.name }}</a> </h2>
-
-                    {% comment %} middle category field - top side{% endcomment %}
-                    <ul class="fashion_catgnav wow fadeInDown">
-                        {% for post in category_posts_3 %}
-                        <li>
-                            <div class="catgimg2_container"> <a href="#"><img alt="" src="{{ post.image_post.url }}"></a> </div>
-                            <h2 class="catg_titile"><a href="#">{{ post.title }}</a></h2>
-                            <div class="comments_box"> <span class="meta_date">{{ post.date_created }}</span> 
-                                <span class="meta_comment"><a href="#">Yorum Yok</a></span> 
-                                <span class="meta_more"><a  href="#">Devamı >></a></span> </div>
-                            <p>{{ post.content }}</p>
-                        </li>
-                        {% endfor %}
-                    </ul>
-
-                    {% comment %} middle category field - bottom side{% endcomment %}
-                    <ul class="small_catg wow fadeInDown">
-                        {% for post in category_posts_3 %}
-                        <li>
-                            <div class="media"> <a class="media-left" href="#"><img src="{{ post.image_post.url }}" alt=""></a>
-                                <div class="media-body">
-                                <h4 class="media-heading"><a href="#">{{ post.title }}</a></h4>
-                                <div class="comments_box"> <span class="meta_date">{{ post.date_created }}</span> 
-                                    <span class="meta_comment"><a href="#">Yorum Yok</a></span> </div>
-                                </div>
-                            </div>
-                        </li>
-                        {% endfor %}
-                    </ul>
-
-                </div>
-            </div>
-            <div class="fashion_category">
-                <div class="single_category">
-                <div class="single_category wow fadeInDown">
-
-                    <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <a class="title_text" href="#">{{ categories4.name }}</a> </h2>
-                    
-                    {% comment %} middle category field - top side {% endcomment %}
-                    <ul class="fashion_catgnav wow fadeInDown">
-                        {% for post in category_posts_4 %}
-                        <li>
-                            <div class="catgimg2_container"> <a href="#"><img alt="" src="{{ post.image_post.url }}"></a> </div>
-                            <h2 class="catg_titile"><a href="#">{{ post.title }}</a></h2>
-                            <div class="comments_box"> <span class="meta_date">{{ post.date_created }}</span> 
-                                <span class="meta_comment"><a href="#">Yorum Yok</a></span> 
-                                <span class="meta_more"><a  href="#">Devamı >></a></span> </div>
-                            <p>{{ post.content }}</p>
-                        </li>
-                        {% endfor %}
-                    </ul>
-
-                    {% comment %} middle category field - bottom side{% endcomment %}
-                    <ul class="small_catg wow fadeInDown">
-                        <li>
-                            <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="{{ post.image_post.url }}" alt=""></a>
-                                <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">{{ post.title }}</a></h4>
-                                    <div class="comments_box"> <span class="meta_date">{{ post.date_created }}</span> 
-                                        <span class="meta_comment"><a href="#">Yorum Yok</a></span> 
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                </div>
-            </div>
-        </div>
-
-        {% comment %} bottom category field {% endcomment %}
-        <div class="technology_catrarea">
-
-            <div class="single_category">
-
-                <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <a class="title_text" href="#">{{ categories5.name }}</a> </h2>
-                {% comment %} bottom category field - left side {% endcomment %}
-                <div class="business_category_left">
-
-                    <ul class="fashion_catgnav wow fadeInDown">
-                        {% for post in category_posts_5 %}
-                        <li>
-                            <div class="catgimg2_container"> <a href="#"><img alt="" src="{{ post.image_post.url }}"></a> </div>
-                            <h2 class="catg_titile"><a href="#">{{ post.title }}</a></h2>
-                            <div class="comments_box"> <span class="meta_date">{{ post.date_created }}</span> 
-                                <span class="meta_comment"><a href="#">Yorum Yok</a></span> 
-                                <span class="meta_more"><a  href="#">Devamı >></a></span> </div>
-                            <p>{{ post.content }}</p>
-                        </li>
-                        {% endfor %}
-                    </ul>
-
-                </div>
-
-                <div class="business_category_right">
-                    <ul class="small_catg wow fadeInDown">
-                        {% for post in category_posts_5 %}
-                        <li>
-                            <div class="media wow fadeInDown"> <a class="media-left" href="#"><img src="{{ post.image_post.url }}" alt=""></a>
-                                <div class="media-body">
-                                <h4 class="media-heading"><a href="#">{{ post.title }} </a></h4>
-                                <div class="comments_box"> <span class="meta_date">{{ post.date_created }}</span> 
-                                    <span class="meta_comment"><a href="#">Yorum Yok</a></span> </div>
-                                </div>
-                            </div>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-
             </div>
 
         </div>

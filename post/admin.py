@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # my models Modules,
-from post.models import Post,Tag,Author,Category
+from post.models import Post,Tag,Author
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ("title","date_created","author","status")
@@ -15,4 +15,3 @@ class AuthorAdmin(admin.ModelAdmin):
 admin.site.register(Post,PostAdmin)
 admin.site.register(Tag,TagAdmin)
 admin.site.register(Author,AuthorAdmin)
-admin.site.register(Category)

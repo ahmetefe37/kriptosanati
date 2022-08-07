@@ -4,7 +4,7 @@
     <div class="latest_slider">
       <div class="slick_slider">
         {% comment %} slider elements {% endcomment %}
-        {% for post in carousel_side_posts %}
+        {% for post in posts %}
           <div class="single_iteam"><img src="{{ post.image_post.url }}" alt="">
             <h2><a class="slider_tittle" href="#">{{ post.title }}</a></h2>
           </div>
